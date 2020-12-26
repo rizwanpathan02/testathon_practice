@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="965f6b38-cfc9-491d-a419-26320485435b" created="3.1.0" activeEnvironment="Default" name="Library_SampleProject" resourceRoot="" updated="3.1.0 2020-02-04T16:09:20Z" encryptionMode="Not encrypted" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="MyTestSuite"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value="authorName=&quot;Author10&quot; bookName=&quot;Rest Assured Basics&quot;"/>
+  <con:entry key="Test Case" value="MyTestCase"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="D:\ReadyAPI-3.1.0\bin"/>
+  <con:entry key="Environment" value="Default environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="D:\ZephyrPOC\Reports"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+    <con:setting id="ProjectSettings@shadowPassword"/>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" id="b44576c4-ea28-4d37-a507-a506b05855e6" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://216.10.245.166" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://216.10.245.166</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Addbook.php" path="/Library/Addbook.php" id="0bfea56e-a722-4883-ae1f-3f1d6a7b30e0">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Addbook.php" id="d90d4a98-e9ee-4fd0-8c59-26002a3f6894" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:add="http://216.10.245.166/Library/Addbook.php">add:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:add="http://216.10.245.166/Library/Addbook.php">add:Response</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="59696511-adbf-4b31-9917-97427f829602" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://216.10.245.166</con:endpoint>
+          <con:request>{
+
+"name":"Selenium Automation",
+"isbn":"ISBN123",
+"aisle":"300",
+"author":"John foe"
+}</con:request>
+          <con:originalUri>http://216.10.245.166/Library/Addbook.php</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="GetBook.php" path="/Library/GetBook.php" id="c8596caa-2ebf-4da3-b1ed-6a2446f49dc2">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>AuthorName</con:name>
+          <con:value>somename</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>somename</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="cb5c23c2-2783-4ebf-961f-0ca99692512b" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:get="http://216.10.245.166/Library/GetBook.php">get:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="c9a60fbd-46ce-4412-992f-b89af628610a" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://216.10.245.166</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="979971b7-6695-4b3e-9160-47bfe5558cdc" name="MyTestSuite">
+    <con:settings>
+      <con:setting id="IncludeOverview">true</con:setting>
+      <con:setting id="IncludeResults">true</con:setting>
+      <con:setting id="FlowLayout">false</con:setting>
+      <con:setting id="ErrorDetails">true</con:setting>
+      <con:setting id="IncludeCoverage">true</con:setting>
+      <con:setting id="GeneratableAllureReport@Folder">D:\ZephyrPOC\AllureResult</con:setting>
+    </con:settings>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="8d9494e6-100e-4e8c-a32e-7f5b1bc8f2e6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="MyTestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="DataGen" id="44415385-4395-424e-93dd-2599d2ee6c07">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration>
+              <start>301</start>
+              <end>999</end>
+              <step/>
+              <pattern/>
+              <random>true</random>
+              <persist>false</persist>
+            </con:configuration>
+            <con:name>aisle</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Advanced</value>
+              <value>Basic</value>
+              <value>Composite</value>
+              <value>Futre</value>
+              <value>Complete</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name2</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Selenium</value>
+              <value>Rest Assured</value>
+              <value>TestNG</value>
+              <value>JUnit</value>
+              <value>SOAPUI</value>
+              <value>Ready API</value>
+              <value>MySQL'</value>
+              <value>Groovy Script</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name1</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Author1</value>
+              <value>Author2</value>
+              <value>Author3</value>
+              <value>Author4</value>
+              <value>Author5</value>
+              <value>Author6</value>
+              <value>Author7</value>
+              <value>Author8</value>
+              <value>Author9</value>
+              <random>true</random>
+            </con:configuration>
+            <con:name>Author</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="AttachFile" id="4efe9ea3-2437-4883-92bf-cb3030dc86c1" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>import groovy.xml.MarkupBuilder
+import org.custommonkey.xmlunit.*
+import java.util.Random  
+import java.security.MessageDigest
+import java.nio.file.*
+
+
+    def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+    def projectPath = groovyUtils.projectPath
+    log.info projectPath
+
+    def project = testRunner.testCase.testSuite.project
+        log.info "Project: " + project.name
+        def myTestSuite = testRunner.testCase.testSuite;
+        log.info "TestSuite: " + myTestSuite.name
+
+    def testCase = testRunner.testCase
+    log.info "TestCase: " + testCase.name
+
+    def targetTestRequest = testCase.getTestStepByName("AddBook")
+    def request= targetTestRequest.testRequest
+    log.info "TestStep: " + targetTestRequest.name
+
+
+    // clear existing attachments
+    for( a in request.attachments ) {
+        request.removeAttachment( a )
+    }
+
+	//target file
+    def filePath = "D:\\ZephyrPOC\\GroovyScript_savereqandresp.txt"
+
+
+    // get file to attach
+    log.info "file to attach: " + filePath
+    def file = new File(filePath)
+    if ( file == null) {
+        log.error "bad filename"
+    }  
+    else 
+    {
+        // attach and set properties
+        def attachment = request.attachFile( file, true )
+        attachment.contentType = "text/plain"
+        log.info "file attached succesfully"
+    }</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="AddBook" id="c6fe3384-adb6-4eaa-ac50-b70b1d97c38c">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/Addbook.php" methodName="Addbook.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="AddBook" id="59696511-adbf-4b31-9917-97427f829602" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request>{
+
+"name":"${#Project#bookName}",
+"isbn":"ISBN123",
+"aisle":"${DataGen#aisle}",
+"author":"${#Project#authorName}"
+}</con:request>
+            <con:originalUri>http://216.10.245.166/Library/Addbook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="6d41e605-9e78-4e16-a731-e974f03c4ce7" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="01343204-bea4-4278-8dff-fb5e1d580ed2" name="Contains">
+              <con:configuration>
+                <token>successfully added</token>
+                <ignoreCase>true</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="5f9cfe6a-29a1-4dc8-b1ce-b51130192cb5" name="Contains 2" disabled="true">
+              <con:configuration>
+                <token>abcd</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:attachment>
+              <con:name>GroovyScript_savereqandresp.txt</con:name>
+              <con:contentType>text/plain</con:contentType>
+              <con:size>1467</con:size>
+              <con:contentId>GroovyScript_savereqandresp.txt</con:contentId>
+              <con:part>abc</con:part>
+              <con:data>UEsDBBQACAgIALmlSFEAAAAAAAAAAAAAAAAfAAAAR3Jvb3Z5U2NyaXB0X3NhdmVyZXFhbmRyZXNwLnR4dK1U32/TMBB+r9T/4WSQlqhrqu1pGurD6Jg2iUKVtoB4qUxyWQONHWJnbYT43znXSeqUSYBonuL79X2++84xJqA05u94hmPQqHRYCoFFYH4nXGHwiHpB/3MKel2ZMI+Fb+YLCPF7SXbmm4i93e/3+r2YCmoZ8wrGIHALt1yTJ0hkkXHtsYq+4XQ6jGO4vw+yLFCKUR7YxKyiqnfpBimZTa5HNzczuJVRmaHQajSXPF8+wGfM11UBs/eTUc0BuIiJj8qlUAifpm/ViA2aWw3YKuTbhu6KDfbsBizQO80OsCo/NS40wNb/G7LFplIJAQvKIPB/IE11n0v8M+pGPgapSKTXdts/MtpeuFaHZdesHHO/14gGOlKqFWQcnt/qqUx1fZwV8itG2h4+yuKbynnU9TXKO8xgReJi3WpHQQ9CHwIMeONf5jGJEnCHUalTKah5XJekw1fuHZ4TPrHJsdApUnCg9uzMufrAN6XZCzsu07wZ12t2Dm6L/6uwneZR5XZOp+Fs4qlyd9YnYt3W7grGCLng22afxhBJoXGnA9zltFwenL384b42L8I2+OcZ+LZAclG/NQaoo+rkItgWRmcHjHNgy8Xd8Irt8R0G9Rb/JQUb7XC4PKLQzia5dDnYvC6Jdp2Ys/P2bXE2GdZcwRdEkit/wpj5vwBQSwcI6LRWkfYBAAC7BQAAUEsBAhQAFAAICAgAuaVIUei0VpH2AQAAuwUAAB8AAAAAAAAAAAAAAAAAAAAAAEdyb292eVNjcmlwdF9zYXZlcmVxYW5kcmVzcC50eHRQSwUGAAAAAAEAAQBNAAAAQwIAAAAA</con:data>
+              <con:id>8e129ee3-ff5a-4a97-b606-88b1a4c8eb3c</con:id>
+            </con:attachment>
+            <con:attachment>
+              <con:name>GroovyScript_AssigneeResponse.txt</con:name>
+              <con:contentType>text/plain</con:contentType>
+              <con:size>905</con:size>
+              <con:contentId>GroovyScript_AssigneeResponse.txt</con:contentId>
+              <con:data>UEsDBBQACAgIAMSlSFEAAAAAAAAAAAAAAAAhAAAAR3Jvb3Z5U2NyaXB0X0Fzc2lnbmVlUmVzcG9uc2UudHh0dVLBTsJAED3TpP+waTzAwdWTiqYmBGOiMWqEk8ChtNO6ZLvb7C4KIfy7M22RRZHDhpl5896bmYqy0saxwmj9ueYLqxV/xGckl6YCEwZhcC8ksJyemCn4YhR3o7vr6fQdqo+1eX0ZTqdvYCutLAxyB2ZgrSiUUMVYj8FigruVi3phQCxDrRwoh2QU8QLcGFau22PHf+QgDDLI2WJvq3XiGe32GpCeLyAlcg/Nq8RYqFU8A21DvkyVE1olkqymiQX7JCwxTGYNwkBhACfS6j+EiM9vwkBaF1OmscCxZymd5ZCkH5sw6BCwTKp4cj1rI1hBuiTthwzJBLYgXGRt1bViu+Iu/ot4Tkr4hVGY4k6PnMEr0G46KD2JPMVoFnvRDkAEw1oU63sHv8ukiIDoxLcQIQp3wJMs6yKaRLd0u7OzsWYVGnEskZKBhBLXb3FhuuBC5Zph1w8Qv4catmNmIrMsN7pkUhCsHjylZEx9PNVS4ro3wkF5eksv3w+x9UTqpgOZn/lRg82xIWP43xNu1A7PRJq5UNlAyk278UYrjq/6/cuL7TFHHoVv6eAA31BLBwhoewAhqwEAAIkDAABQSwECFAAUAAgICADEpUhRaHsAIasBAACJAwAAIQAAAAAAAAAAAAAAAAAAAAAAR3Jvb3Z5U2NyaXB0X0Fzc2lnbmVlUmVzcG9uc2UudHh0UEsFBgAAAAABAAEATwAAAPoBAAAAAA==</con:data>
+              <con:id>32db79f6-3df6-4fcd-91f2-2ad28ce05cd3</con:id>
+            </con:attachment>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetBooksByAuthor" id="9efdf5d8-8645-448d-a506-81ced0d44c45">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/GetBook.php" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetBooksByAuthor" id="c9a60fbd-46ce-4412-992f-b89af628610a" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://216.10.245.166/Library/GetBook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="3f76e38a-bc03-41e0-8874-7a6bb758cd80" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="AuthorName" value="${#Project#authorName}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="UpdateStatus" id="3b63400d-b66c-42ae-a546-2e07da9fe88c" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>import com.eviware.soapui.model.project.ProjectFactoryRegistry
+import com.eviware.soapui.impl.wsdl.WsdlProjectFactory
+
+def workspace = testRunner.testCase.testSuite.project.workspace
+def testProject = (workspace==null) ? 
+  ProjectFactoryRegistry.getProjectFactory(WsdlProjectFactory.WSDL_TYPE).createNew("D://ZephyrPOC//Library-SampleProject-readyapi-project.xml") :
+  workspace.getProjectByName("Zephyr POC_new")
+if(!testProject.open &amp;&amp; workspace!=null) workspace.openProject(testProject)
+
+def zephyrIntegrationFunction = testProject.getTestSuiteByName("Zephyr Int").getTestCaseByName("Zephyr function")
+		.getTestStepByName("Groovy Script");
+
+
+zephyrIntegrationFunction.run(testRunner, context);
+
+
+def ZephyrIntegrationValue = context.zephyrIntegration;
+log.info  "succesful";
+
+//def assertionStatus = testRunner.testCase.testSteps["REST Request"].assertionStatus;
+
+//log.info(assertionStatus)
+
+/*def status
+if(assertionStatus.toString() == "PASS")
+{
+	status ="1";
+}
+else 
+{
+	status ="2";
+}
+
+log.info(status)*/
+def tcstatus = context.expand( '${Data#tcstatus}' )
+def filepath = context.expand( '${Data#filepath}' )
+
+if(tcstatus.toString() == "Pass")
+{
+	status ="1";
+}
+else 
+{
+	status ="2";
+}
+
+//run the function from the class
+def testcasename=testRunner.testCase.getName().toString()
+log.info testcasename
+
+def TCid = testcasename.substring(0, testcasename.indexOf('_'))
+
+log.info(TCid)
+
+
+
+
+ZephyrIntegrationValue.runtestexecutionstatusUpdate(status,TCid,"Automation_Functional",filepath)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Raw_GroovyScript" id="2f63cd5f-d82a-46e8-8a8d-55393f89d297" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>import com.eviware.soapui.model.testsuite.Assertable.AssertionStatus
+import com.eviware.soapui.model.testsuite.TestRunner.Status
+
+def TestCase = testRunner.getTestCase()
+def StepList = TestCase.getTestStepList()
+def flagList=[]
+def today = new Date().format("yyyy-MM-dd HH.mm.ss")
+def path = "D:\\ZephyrPOC\\"
+def file = new File(path+TestCase.name+"_"+"ReqandResp"+"_"+today+".txt")
+log.info file
+file.write("\n\n")
+//StepList.each{
+for (testStep in StepList){  
+	  //check if test step is of type RestRequest
+	  if (testStep instanceof com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep){
+	  //Write request and response
+	  file.append(testStep.name+"  Request : "+"\n")
+	  file.append(context.testCase.getTestStepByName(testStep.name).getProperty("RawRequest").getValue())
+	  file.append("\n\n")
+	  file.append(testStep.name+"  Response : \n")
+	  file.append(context.testCase.getTestStepByName(testStep.name).getProperty("RawResponse").getValue())
+	  file.append("\n")
+	  file.append("----------------------------------------------------------------------------------------");
+	  
+		// check that testStep has assertionStatus 
+		if(testStep.metaClass.hasProperty(testStep,'assertionStatus')){
+		   if(testStep.assertionStatus == AssertionStatus.FAILED){
+		       log.info "${testStep.name} FAIL..."
+		       flagList.add(0)
+		   }else if(testStep.assertionStatus == AssertionStatus.VALID){
+		       log.info "${testStep.name} OK!"
+		       flagList.add(1)
+		       continue
+		   }else if(testStep.assertionStatus == AssertionStatus.UNKNOWN){
+		       log.info "${testStep.name} UNKNOWN (PROBABLY NOT ALREADY EXECUTED)"
+		       flagList.add(-1)
+		   }
+		}
+	}
+}
+def result = testRunner.getResults()
+result.each{
+	log.info result.status 
+	}
+assert flagList.contains(0)==false</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="saveReqandResp" id="295b42b0-767f-4758-b1fa-33ed42227ff4" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>def stepName= testRunner.testCase.getTestStepByName("REST Request").getName()
+
+def today = new Date().format("yyyy-MM-dd HH.mm.ss")
+ 
+def myReqFile = "C:/AAP Documents/SoapUI Zephyr POC/Request and Response XMLs/"+stepName+"_Raw Request_"+today+".txt"
+def myRespFile = "C:/AAP Documents/SoapUI Zephyr POC/Request and Response XMLs/"+stepName+ "_Raw Response_"+today+".txt"
+
+def Reqfilename = stepName+"_Raw Request_"+today+".txt"
+def Resfilename = stepName+ "_Raw Response_"+today+".txt"
+
+log.info(myReqFile)
+log.info(myRespFile)
+log.info(Reqfilename)
+log.info(Resfilename)
+
+testCase = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Zephyr POC_new").getTestSuiteByName("Zephyr Int").getTestCaseByName("Update execution status");
+
+testCase.getTestStepByName("Properties").setPropertyValue("RequestFilePath", myReqFile)
+testCase.getTestStepByName("Properties").setPropertyValue("ResponseFilePath", myRespFile)
+testCase.getTestStepByName("Properties").setPropertyValue("RequestFileName", Reqfilename)
+testCase.getTestStepByName("Properties").setPropertyValue("ResponseFileName", Resfilename)
+
+def rawRequest = context.expand( '${REST Request#RawRequest}' )
+def f1 = new File(myReqFile)
+f1.write(rawRequest, "UTF-8")
+
+
+def rawResponse = context.expand( '${REST Request#RawResponse}' )
+def f2= new File(myRespFile)
+f2.write(rawResponse, "UTF-8")
+
+log.info("Raw Request and Raw Response has been saved")</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="7dee82fc-10f7-43fb-9d92-b64f6b4b8a8d" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>//def author = context.expand( '${DataGen#Author}' )
+def authorName = context.expand( '${#Project#authorName}' )
+def bookName = context.expand( '${#Project#bookName}' )
+
+def name2 = context.expand( '${DataGen#name2}' )
+def name1 = context.expand( '${DataGen#name1}' )
+def ID = context.expand( '${AddBook#Response#$[\'ID\']}' )
+
+
+
+
+def str= "Author : "+authorName + "has written a book : "+bookName+" with ID : "+ID
+return str</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="GroovyScript_SearchResponse" id="d42c9dbe-d0a3-4dfc-933a-bf62a9d8b392" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>import groovy.json.JsonSlurper
+
+File file = new File("D:\\ZephyrPOC\\Search_response.txt")
+fileContent = file.getText()                 
+
+
+def jsonSlurper = new JsonSlurper()
+def object = jsonSlurper.parseText(fileContent)
+def fucntionalTestcasesList = []
+def regressionTestcasesList = []
+
+object.results.each {                                        //Iterating over each results 
+    
+    def testCaseId = it.testcase.id
+    def mtmAutomationStatus = ""
+    def mtmTestType = ""
+    it.testcase.customFieldValues.each{                      //Iterating over each customFieldValues for particular test case 
+	    	if(it.displayName=='MTMAutomationStatus'){
+	    		 mtmAutomationStatus = it.textValue
+	    	}
+	    	if(it.displayName=='MTMTestType'){
+	    		 mtmTestType = it.textValue
+	    	}
+    }
+    if(mtmTestType=='Funtional'){
+    		fucntionalTestcasesList.add(testCaseId)
+	}
+	 if(mtmTestType=='Regression'){
+    		regressionTestcasesList.add(testCaseId)
+	}
+}
+
+log.info "fucntionalTestcasesList : "+fucntionalTestcasesList
+log.info "regressionTestcasesList : "+regressionTestcasesList</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>44415385-4395-424e-93dd-2599d2ee6c07</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>9efdf5d8-8645-448d-a506-81ced0d44c45</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>2f63cd5f-d82a-46e8-8a8d-55393f89d297</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>4efe9ea3-2437-4883-92bf-cb3030dc86c1</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>3b63400d-b66c-42ae-a546-2e07da9fe88c</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="c18f7c3d-ce5d-4b06-a46c-544da0ba76dc" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="MyTestCase_Second" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="DataGen" id="8cab818d-3564-4dca-bbd4-4981283aec98">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration>
+              <start>301</start>
+              <end>999</end>
+              <step/>
+              <pattern/>
+              <random>true</random>
+              <persist>false</persist>
+            </con:configuration>
+            <con:name>aisle</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Advanced</value>
+              <value>Basic</value>
+              <value>Composite</value>
+              <value>Futre</value>
+              <value>Complete</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name2</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Selenium</value>
+              <value>Rest Assured</value>
+              <value>TestNG</value>
+              <value>JUnit</value>
+              <value>SOAPUI</value>
+              <value>Ready API</value>
+              <value>MySQL'</value>
+              <value>Groovy Script</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name1</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Author1</value>
+              <value>Author2</value>
+              <value>Author3</value>
+              <value>Author4</value>
+              <value>Author5</value>
+              <value>Author6</value>
+              <value>Author7</value>
+              <value>Author8</value>
+              <value>Author9</value>
+              <random>true</random>
+            </con:configuration>
+            <con:name>Author</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="AddBook" id="a56177b9-a58c-49ed-b771-2fe65f7fc5bf">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/Addbook.php" methodName="Addbook.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="AddBook" id="59696511-adbf-4b31-9917-97427f829602" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request>{
+
+"name":"${#Project#bookName}",
+"isbn":"ISBN123",
+"aisle":"${DataGen#aisle}",
+"author":"${#Project#authorName}"
+}</con:request>
+            <con:originalUri>http://216.10.245.166/Library/Addbook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="6d41e605-9e78-4e16-a731-e974f03c4ce7" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="01343204-bea4-4278-8dff-fb5e1d580ed2" name="Contains">
+              <con:configuration>
+                <token>successfully added</token>
+                <ignoreCase>true</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetBooksByAuthor" id="b93a13b8-1f8e-42bc-8adf-b91448939f0b">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/GetBook.php" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetBooksByAuthor" id="c9a60fbd-46ce-4412-992f-b89af628610a" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://216.10.245.166/Library/GetBook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="3f76e38a-bc03-41e0-8874-7a6bb758cd80" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="AuthorName" value="My Author 777"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="dc32fc18-ce32-4cb5-aa63-051e1941d744">
+        <con:settings/>
+        <con:config>
+          <script>//def author = context.expand( '${DataGen#Author}' )
+def authorName = context.expand( '${#Project#authorName}' )
+def bookName = context.expand( '${#Project#bookName}' )
+
+def name2 = context.expand( '${DataGen#name2}' )
+def name1 = context.expand( '${DataGen#name1}' )
+def ID = context.expand( '${AddBook#Response#$[\'ID\']}' )
+
+
+
+
+def str= "Author : "+authorName + "has written a book : "+bookName+" with ID : "+ID
+return str</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>44415385-4395-424e-93dd-2599d2ee6c07</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>9efdf5d8-8645-448d-a506-81ced0d44c45</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="dc0d1a8c-07d4-4e08-9656-26fc2b32f553" name="MyTestSuite_2">
+    <con:settings>
+      <con:setting id="IncludeOverview">true</con:setting>
+      <con:setting id="IncludeResults">true</con:setting>
+      <con:setting id="FlowLayout">false</con:setting>
+      <con:setting id="ErrorDetails">true</con:setting>
+      <con:setting id="IncludeCoverage">true</con:setting>
+      <con:setting id="GeneratableAllureReport@Folder">D:\ZephyrPOC\AllureResult</con:setting>
+    </con:settings>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="0a74c089-707d-4c0b-b5df-aea05e07c3c5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="MyTestCase" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datagen" name="DataGen" id="5a439217-ef51-4537-88d3-d6ad2cb170d9">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration>
+              <start>301</start>
+              <end>999</end>
+              <step/>
+              <pattern/>
+              <random>true</random>
+              <persist>false</persist>
+            </con:configuration>
+            <con:name>aisle</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Advanced</value>
+              <value>Basic</value>
+              <value>Composite</value>
+              <value>Futre</value>
+              <value>Complete</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name2</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Selenium</value>
+              <value>Rest Assured</value>
+              <value>TestNG</value>
+              <value>JUnit</value>
+              <value>SOAPUI</value>
+              <value>Ready API</value>
+              <value>MySQL'</value>
+              <value>Groovy Script</value>
+              <random>false</random>
+            </con:configuration>
+            <con:name>name1</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+          <con:property type="List">
+            <con:configuration>
+              <value>Author1</value>
+              <value>Author2</value>
+              <value>Author3</value>
+              <value>Author4</value>
+              <value>Author5</value>
+              <value>Author6</value>
+              <value>Author7</value>
+              <value>Author8</value>
+              <value>Author9</value>
+              <random>true</random>
+            </con:configuration>
+            <con:name>Author</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>false</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="AddBook" id="4e27fa90-2ec1-4738-843f-63fa77653a4e">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/Addbook.php" methodName="Addbook.php" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="AddBook" id="59696511-adbf-4b31-9917-97427f829602" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request>{
+
+"name":"${#Project#bookName}",
+"isbn":"ISBN123",
+"aisle":"${DataGen#aisle}",
+"author":"${#Project#authorName}"
+}</con:request>
+            <con:originalUri>http://216.10.245.166/Library/Addbook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="6d41e605-9e78-4e16-a731-e974f03c4ce7" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="01343204-bea4-4278-8dff-fb5e1d580ed2" name="Contains">
+              <con:configuration>
+                <token>successfully added</token>
+                <ignoreCase>true</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetBooksByAuthor" id="720c402f-b1cc-45f8-b69e-b82b369f0e45">
+        <con:settings/>
+        <con:config service="http://216.10.245.166" resourcePath="/Library/GetBook.php" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetBooksByAuthor" id="c9a60fbd-46ce-4412-992f-b89af628610a" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://216.10.245.166</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://216.10.245.166/Library/GetBook.php</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="3f76e38a-bc03-41e0-8874-7a6bb758cd80" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="AuthorName" value="My Author 777"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="d7cf11f3-9719-4205-87f3-1806d5c3016c">
+        <con:settings/>
+        <con:config>
+          <script>//def author = context.expand( '${DataGen#Author}' )
+def authorName = context.expand( '${#Project#authorName}' )
+def bookName = context.expand( '${#Project#bookName}' )
+
+def name2 = context.expand( '${DataGen#name2}' )
+def name1 = context.expand( '${DataGen#name1}' )
+def ID = context.expand( '${AddBook#Response#$[\'ID\']}' )
+
+
+
+
+def str= "Author : "+authorName + "has written a book : "+bookName+" with ID : "+ID
+return str</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>44415385-4395-424e-93dd-2599d2ee6c07</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>9efdf5d8-8645-448d-a506-81ced0d44c45</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:requirements/>
+  <con:properties>
+    <con:property encrypted="false">
+      <con:name>authorName</con:name>
+      <con:value>My Author 888</con:value>
+      <con:encryptedContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:property>
+    <con:property encrypted="false">
+      <con:name>bookName</con:name>
+      <con:value>My Book 888</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
